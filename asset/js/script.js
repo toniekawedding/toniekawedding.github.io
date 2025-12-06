@@ -42,6 +42,51 @@ function showToast(message, type = "success") {
   }, 2000);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Dapatkan semua tautan yang merupakan target navigasi (bukan tombol musik)
+  // Asumsikan semua <li> di dalam <ul class="nav"> adalah tautan navigasi
+  const navLinks = document.querySelectorAll(".nav li a");
+
+  // Tombol musik dikecualikan karena fungsinya berbeda
+  const musicButton = document.getElementById("music-button");
+
+  // Tambahkan event listener untuk setiap tautan navigasi
+  navLinks.forEach((link) => {
+    // Abaikan tombol musik agar tetap berfungsi normal (rotate) jika ia punya fungsi JS lain
+    if (link.id !== "music-button") {
+      link.addEventListener("click", function (event) {
+        // Pastikan tautan memiliki hash (dimulai dengan #)
+        const targetHash = this.getAttribute("href");
+
+        if (targetHash && targetHash.startsWith("#")) {
+          // A. Mencegah perubahan URL (hash #section-id) di address bar
+          event.preventDefault();
+
+          // Dapatkan elemen target (bagian laman)
+          const targetElement = document.querySelector(targetHash);
+
+          if (targetElement) {
+            // B. Lakukan Smooth Scrolling secara manual
+            // Ini yang 'mengubah tampilan' tanpa memuat ulang laman
+            targetElement.scrollIntoView({
+              behavior: "smooth", // Membuat transisi gulir lebih mulus
+            });
+
+            // Opsional: Anda bisa secara manual mengganti URL hash
+            // TANPA memuat ulang, untuk mendukung tombol "Back" browser,
+            // tetapi ini tidak disarankan jika Anda benar-benar ingin
+            // 'link tidak berubah' sama sekali.
+            // window.location.hash = targetHash;
+          }
+
+          // Opsional: Tutup menu navbar jika itu adalah menu mobile yang terbuka
+          // Contoh: closeNavbar();
+        }
+      });
+    }
+  });
+});
+
 /* ============================================================
    MUSIC CONTROL
 ============================================================ */
