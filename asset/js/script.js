@@ -42,6 +42,8 @@ function showToast(message, type = "success") {
   }, 2000);
 }
 
+// klik tanpa merubah link
+
 document.addEventListener("DOMContentLoaded", function () {
   // 1. Dapatkan semua tautan yang merupakan target navigasi (bukan tombol musik)
   // Asumsikan semua <li> di dalam <ul class="nav"> adalah tautan navigasi
