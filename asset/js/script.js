@@ -389,7 +389,7 @@ function renderComments(list) {
     container.innerHTML += `
       <div class="wish-item">
         <b>${item.name} ${icon}</b>
-        <small class="text-muted"> • ${item.timeText}</small>
+        <small class="text-white-time"> • ${item.timeText}</small>
         <div>${item.message}</div>
         <hr>
       </div>

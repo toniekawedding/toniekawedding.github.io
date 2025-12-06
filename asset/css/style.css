@@ -525,8 +525,46 @@ h5 {
 .rsvp-form .form-select {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #000 !important;
+  color: #ffffff !important;
   font-weight: bold;
+}
+
+/* =========================================
+   BAGIAN 1: Mengubah Warna Teks Formulir
+   ========================================= */
+
+/* BARU: Memastikan placeholder "Nama" dan "Doa & Ucapan" menjadi putih */
+.rsvp-form .form-control::placeholder,
+.rsvp-form .form-select::placeholder,
+textarea::placeholder {
+  color: #ffffff !important;
+  opacity: 1; /* Penting untuk konsistensi di Firefox */
+}
+
+/* UBAH: Agar teks yang dipilih di dropdown ("Konfirmasi Kehadiran", "Hadir", dll.) menjadi putih, 
+   termasuk 'panah' jika diimplementasikan secara kustom. */
+#attendanceSelect {
+  color: white; /* UBAH dari black menjadi white */
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  appearance: none;
+}
+
+/* =========================================
+   BAGIAN 2: Mengubah Warna Waktu Komentar
+   ========================================= */
+
+/* BARU: Untuk waktu komentar yang sebelumnya menggunakan text-muted (abu-abu) */
+.text-white-time {
+  color: white !important;
+}
+
+/* Style untuk option */
+#attendanceSelect option {
+  background-color: white; /* background putih */
+  color: black; /* teks hitam */
 }
 
 .rsvp-form .btn {
