@@ -11,20 +11,20 @@ simplyCountdown(".simply-countdown", {
   words: {
     days: {
       // Function to handle pluralization
-      lambda: (root, count) => (count > 1 ? root + "s" : root),
-      root: "day", // Base word for days
+      lambda: (root, count) => (count > 1 ? root : root),
+      root: "Hari", // Base word for days
     },
     hours: {
-      lambda: (root, count) => (count > 1 ? root + "s" : root),
-      root: "hour",
+      lambda: (root, count) => (count > 1 ? root : root),
+      root: "Jam",
     },
     minutes: {
-      lambda: (root, count) => (count > 1 ? root + "s" : root),
-      root: "minute",
+      lambda: (root, count) => (count > 1 ? root : root),
+      root: "Menit",
     },
     seconds: {
-      lambda: (root, count) => (count > 1 ? root + "s" : root),
-      root: "second",
+      lambda: (root, count) => (count > 1 ? root : root),
+      root: "Detik",
     },
   },
 });
