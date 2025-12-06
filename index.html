@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toni & Eka Wedding</title>
+    <!-- favicon -->
+    <link rel="icon" href="asset/img/faviconproject.png" />
+    <!-- SimplyCountdown -->
+    <link rel="stylesheet" href="asset/css/countdown/themes/default.css" />
+    <!-- bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="asset/css/style.css" />
+    <!-- fontawesome6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- fontawesome6 -->
+    <link
+      rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- our moment img -->
+    <div id="lightbox" class="lightbox">
+      <img id="lightbox-img" src="" alt="photo-preview" />
+    </div>
+    <!-- audio -->
+    <audio
+      src="asset/audio/Crazy Rich Asians Official Soundtrack  Cant Help Falling In Love - Kina Grannis  WaterTower (mp3cut.net).mp3"
+      loop
+      class="music"
+    ></audio>
+    <div
+      id="hero"
+      class="hero w-100 h-100 p-3 mx-auto text-center d-flex flex-column justify-content-center align-items-center text-white"
+    >
+      <main class="d-flex flex-column justify-content-between h-100">
+        <div class="hero-top">
+          <h3 class="anim-seq-1">THE WEDDING</h3>
+          <h2 class="anim-seq-2">Toni &amp; Eka</h2>
+          <h5 class="anim-seq-3">Minggu, 14 Desember 2025</h5>
+        </div>
+
+        <div class="hero-space"></div>
+
+        <div class="hero-bottom">
+          <p class="anim-seq-4">Yth, Bapak/Ibu/Saudara/i,</p>
+          <h4 class="keluarga anim-seq-5" id="guestName">Keluarga Besar</h4>
+          <p class="anim-seq-6">
+            Tanpa mengurangi rasa hormat, kami mengundang
+            anda untuk menghadiri acara
+            pernikahan kami.
+          </p>
+          <div id="door-section" class="open anim-seq-7">
+            <a href="#" class="btn btn-lg mt-4" id="open-invitation">
+              BUKA UNDANGAN
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="content-section" style="display: none">
+      <!-- navbar -->
+      <ul class="nav">
+        <span class="nav-music"></span>
+        <li>
+          <a href="#bride-section">
+            <i class="fas fa-fw fa-user"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#journey-section">
+            <i class="fas fa-fw fa-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#save-the-date">
+            <i class="fas fa-fw fa-calendar-day"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-item-music rotate" id="music-button">
+            <i class="fas fa-fw fa-compact-disc"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#gallery-section">
+            <i class="fas fa-fw fa-image"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#rsvp-section">
+            <i class="fas fa-fw fa-check-to-slot"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#gift-section">
+            <i class="fas fa-fw fa-gift"></i>
+          </a>
+        </li>
+      </ul>
+
+      <section
+        id="pembuka-section"
+        class="section-bg screen2">
+        <div class="top-content">
+          <h3 class="anim-seq-1">THE WEDDING</h3>
+          <h2 class="anim-seq-2">Toni &amp; Eka</h2>
+          <h5 class="anim-seq-3">Minggu, 14 Desember 2025</h5>
+        </div>
+
+        <div class="middle-space"></div>
+
+        <div class="bottom-content">
+          <p class="anim-seq-4">
+            Ketika dua hati dipersatukan dalam ketulusan, maka
+            terjadilah hubungan yang dikarunia oleh Tian, dan
+            keluarga berdiri teguh dalam keselarasan.
+          </p>
+          <p class="anim-seq-5">Kitab Liji, Bab XLI (Hun Yi) : 5</p>
+        </div>
+      </section>
+
+      <section id="bride-section" class="section-groom">
+        <img src="asset/img/pria.jpg" alt="Groom Image" class="full-bg-img"/>
+        <div class="groom-overlay"></div>
+        <div class="groom-content anim-scroll">
+          <h3 class="groom-title">THE GROOM</h3>
+          <h2 class="groom-name">Toni Tanu Direja</h2>
+          <div class="groom-line"></div>
+          <p class="groom-desc">
+            Putra Pertama Dari<br />
+            Tn. Suhanda (Alm)<br />
+            & Ny Yeni
+          </p>
+          <a href="https://www.tiktok.com/@toni051012?_r=1&_t=ZS-91usErtz8Uy" target="_blank" class="btn-ig">
+            <i class="fab fa-tiktok"></i> @toni051012
+          </a>
+        </div>
+      </section>
+      
+      <section id="groom-section" class="section-groom">
+        <img src="asset/img/wanita.jpg" alt="Bride Image" class="full-bg-img"/>
+        <div class="groom-overlay"></div>
+        <div class="groom-content anim-scroll">
+          <h3 class="groom-title">THE BRIDE</h3>
+          <h2 class="groom-name">Eka Pransiska</h2>
+          <div class="groom-line"></div>
+          <p class="groom-desc">
+            Putri ke 5 Dari<br />
+            Tn. Oklim (Alm)<br />
+            & Ny. Erce
+          </p>
+          <a href="https://www.tiktok.com/@giska.garneta?_r=1&_t=ZS-91us8RwyNU8" target="_blank" class="btn-ig">
+            <i class="fab fa-tiktok"></i> @giska.garneta
+          </a>
+        </div>
+      </section>      
+
+      <section
+        id="journey-section"
+        class="section-bg section-text-only screen2">
+        <div class="top-content anim-scroll">
+          <h3>JOURNEY OF LOVE</h3>
+          <img class="cintaku" src="asset/img/image3.jpg" alt="foto-wedding" />
+        </div>
+        <div class="middle-space"></div>
+        <div class="bottom-content anim-scroll text-justify">
+          <p>
+            Pada Januari 2025, takdir mempertemukan kami di media sosial, meninggalkan kesan hangat di hati.
+            Dari momen-momen kecil itu, rasa nyaman dan kehangatan perlahan tumbuh, membuka jalan bagi cinta yang bersemi.
+            Februari 2025 menandai awal kisah asmara kami, hari-hari dipenuhi tawa, percakapan, dan perhatian yang mengikat hati.
+          </p>
+          <p>
+            Meski perjalanan kami tak selalu mudah. Jarak, waktu, dan tantangan kadang menguji cinta kami, seperti ujung pelangi yang tampak berjauhan namun tetap menyatukan warna-warni indah di tengahnya, hati kami menapaki setiap warna dan cahaya dengan lembut, saling menemukan, menyatukan harapan dan cinta yang terus bertumbuh hingga akhirnya membawa kami pada momen paling berharga yang menutup akhir tahun dengan kebahagiaan yang hangat, tulus, dan abadi.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="save-the-date"
+        class="section-bg screen2">
+        <div class="top-content anim-scroll">
+          <h3>SAVE THE DATE</h3>
+          <div class="simply-countdown"></div>
+          <button id="btnSaveDate" class="btn btn-lg mt-3">
+            Simpan Tanggal
+          </button>
+        </div>
+        <div class="bottom-content anim-scroll">
+          <h3>ACARA PERNIKAHAN</h3>
+          <h5>
+            Minggu, 14 Desember 2025 <br />
+            11.00 WIB - Selesai
+          </h5>
+          <p>
+            Jl. Perumahan Inkopad No.36, RT. 02/09 desa, Kalisuren, kec. Tajurhalang, Kabupaten Bogor, Jawa Barat 16320
+          </p>
+          <a
+            href="https://maps.app.goo.gl/WMeWFtygeudF6YPG8"
+            target="_blank"
+            class="btn btn-lg mt-3"
+          >
+            GOOGLE MAPS
+          </a>
+        </div>
+      </section>
+
+      <!-- <section
+        id="acara-section"
+        class="section-bg section-text-only screen2">
+        <div class="top-content anim-scroll">
+          <h3>RESEPSI</h3>
+          <h4>THE EMERALD TERRACE</h4>
+          <h5 class="tanggal">
+            Minggu, 15 Desember 2025 <br />
+            15.00 - 18.00 WIB
+          </h5>
+          <h3>GEDUNG GALAXY BOGOR</h3>
+          <p>
+            Gedung Serbaguna Galaxy, Jl. Raya Tajur No. RTOI/RW02, <br />
+            Tajur, Kec. Bogor Timur, Kota Bogor, Jawa Barat, 16141
+          </p>
+          <a
+            href="https://maps.app.goo.gl/..."
+            target="_blank"
+            class="btn btn-lg mt-3"
+          >
+            GOOGLE MAPS
+          </a>
+        </div>
+      </section> -->
+      
+      <section
+        id="gallery-section"
+        class="section-bg screen2">
+        <div class="top-content anim-scroll">
+          <h3>OUR MOMENT</h3>
+          <p>
+            "Where every captured moment becomes a timeless memory of our love."
+          </p>
+        </div>
+        <div class="middle-space"></div>
+        <div class="bottom-content gallery-grid anim-scroll">
+          <div class="row g-2">
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image6.png"
+                alt="Gallery 1"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image2.jpeg"
+                alt="Gallery 2"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image4.jpg"
+                alt="Gallery 3"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image5.jpg"
+                alt="Gallery 4"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>            
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image7.jpeg"
+                alt="Gallery 5"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image8.jpg"
+                alt="Gallery 6"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image9.jpg"
+                alt="Gallery 7"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+            <div class="col-6 col-md-4">
+              <img
+                src="asset/img/image3.jpg"
+                alt="Gallery 8"
+                class="img-fluid anim-scroll img-gallery moment-photo"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="rsvp-section"
+        class="section-bg section-form screen2">
+        <div class="top-content anim-scroll">
+          <h3>RSVP & WISHES</h3>
+          <p>
+            Bagi tamu undangan yang akan hadir di acara pernikahan kami, silakan
+            konfirmasikan kehadiran dengan mengisi form berikut:
+          </p>
+        </div>
+        <div class="middle-space"></div>
+        <div class="bottom-content anim-scroll">
+          <form
+            class="rsvp-form" id="rsvpForm">
+          <input
+              type="text"
+              placeholder="Nama"
+              class="form-control mb-3"
+            data-input="nama"
+              id="rsvpNameInput"
+              name="entry.1111111111"
+              required
+            />
+
+            <select id="attendanceSelect" class="form-select mb-3" name="entry.2222222222" required>
+              <option data-option="konfirmasi" value="" selected disabled>Konfirmasi Kehadiran</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+
+            <textarea
+              placeholder="Doa & Ucapan" id="wishMessage" data-input="pesan"
+              class="form-control mb-3"
+              rows="3"
+              name="entry.3333333333"
+            ></textarea>
+
+            <button id="kirim" type="submit" data-button="kirim" class="btn btn-lg">KIRIM</button>
+          </form>
+
+          <div class="guestbook mt-4" id="guestbookList">
+            </div>
+            <div id="paginationContainer" class="pagination-wrapper"></div>        </div>
+      </section>
+
+      <section
+        id="gift-section"
+        class="section-bg section-gift screen2">
+        <div class="top-content anim-scroll moment">
+          <h3 class="gift-title">WEDDING GIFT</h3>
+          <img class="cintakuuu" src="asset/img/images.png" alt="foto-wedding" />
+          <p class="gift-desc">
+            Tanpa mengurangi rasa hormat bagi tamu yang ingin mengirimkan hadiah
+            kepada kami, bisa melalui nomor rekening dibawah ini:
+          </p>
+
+          <div class="gift-buttons">
+            <button class="btn-gift" id="btnAmplop">E-AMPLOP</button>
+          </div>
+
+          <div id="giftContent" class="hide">
+            <div class="gift-item">
+              <div class="gift-info">
+                <h3>BCA</h3>
+                <p>
+                  <span id="rek1" class="rek1">0020061910</span><br />
+                  Toni Tanu Direja
+                </p>
+              </div>
+              <button class="btn-salin" onclick="copyById('rek1')">
+                SALIN
+              </button>
+            </div>
+
+            <div class="gift-item">
+              <div class="gift-info">
+                <h3>DANA</h3>
+                <p>
+                  <span id="rek2">085714787811</span><br />
+                  Eka Pransiska
+                </p>
+              </div>
+              <button class="btn-salin" onclick="copyById('rek2')">
+                SALIN
+              </button>
+            </div>
+          </div>
+          <h3>THANK YOU FOR YOUR ATTENDANCE</h3>
+          <p>
+            Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
+            Bapak/Ibu/Saudara/i berkenan hadir di hari bahagia kami.
+          </p>
+          <h2>Toni & Eka</h2>
+          <img class="cintakuu"
+          src="/asset/img/image2.jpeg"
+          alt="image"
+          class="img-fluid d-block mx-auto anim-scroll"
+        />
+        <footer class="site-footer">
+          <h1>BykenZ</h1>
+          <p>All rights reserved ©2025</p>
+        </footer>        
+      </section>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/js/countdown/simplyCountdown.umd.js"></script>
+    
+    <!-- Firebase v8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <script src="/asset/js/firebase/firebase-config.js"></script>
+    <script src="/asset/js/script.js"></script>
+      </body>
+</html>

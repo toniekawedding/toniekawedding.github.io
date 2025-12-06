@@ -1,0 +1,889 @@
+:root {
+  --pink: #f14e95;
+  --pink-muted: #fdf4f8;
+  --pink-light: #fcdbe9;
+  --pink-hover: #d84686;
+  --white: #fff;
+  --grey: #ccc;
+  --bg: #0a0a0a;
+  --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+  --nav-bg: rgba(0, 0, 0, 0.7);
+  /* Diubah namanya agar tidak bentrok */
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: var(--bg);
+  /* Penting: Mencegah flicker putih saat fade out */
+  color: var(--white);
+}
+
+/* === UMUM / RESPONSIF FONT === */
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+h2 {
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+p {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.6;
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: clamp(1.3rem, 4vw, 2.2rem);
+}
+
+h4 {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+h5 {
+  letter-spacing: 3px;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+}
+
+/* Tombol hero */
+.hero a.btn,
+.section-bg a.btn {
+  font-size: 1rem;
+  border-radius: 50px;
+  padding: 8px 35px;
+  background-color: var(--nav-bg);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.hero a.btn:hover,
+.section-bg a.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* === FADE-IN SEQUENTIAL & SCROLL (ANIMASI) === */
+
+/* screen2 */
+/* ===== Crossfade background for .screen2 sections ===== */
+.screen2 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out !important;
+}
+
+.screen2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* supaya konten di atas overlay */
+.screen2 > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Semua elemen yang akan dianimasikan */
+.anim-seq-1,
+.anim-seq-2,
+.anim-seq-3,
+.anim-seq-4,
+.anim-seq-5,
+.anim-seq-6,
+.anim-seq-7,
+.anim-scroll {
+  opacity: 0;
+  transform: translateY(15px);
+  /* Durasi transisi untuk animasi smooth */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Class SHOW untuk menjalankan Fade-in */
+.anim-seq-1.show,
+.anim-seq-2.show,
+.anim-seq-3.show,
+.anim-seq-4.show,
+.anim-seq-5.show,
+.anim-seq-6.show,
+.anim-seq-7.show,
+.anim-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === HERO SECTION (LAYAR 1) === */
+.hero {
+  /* Diubah ke fixed untuk fade-out layar penuh tanpa flicker */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(/asset/img/image6.png);
+  /* Ganti dengan gambar latar Anda */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Background overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero .hero-bottom .keluarga {
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-top,
+.hero-bottom {
+  text-align: center;
+  width: 100%;
+}
+
+.hero-top h2 {
+  font-size: 4rem;
+}
+
+.hero-top p:first-child {
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+/* === CONTENT SECTION (LAYAR 2 DST) === */
+
+/* === Navigasi === */
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  list-style-type: none;
+  display: flex;
+  background-color: var(--nav);
+  backdrop-filter: blur(20px);
+  height: 80px;
+  z-index: 9999;
+}
+
+.nav li {
+  flex: 1;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: var(--very-light-grey);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  position: relative;
+}
+
+.nav li a:hover {
+  color: var(--white);
+}
+
+.nav li a.nav-item-music {
+  font-size: 30px;
+  display: flex;
+  top: -20px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav .nav-music {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotate {
+  animation: rotateAnimation 5s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Section Umum */
+.section-bg {
+  min-height: 100vh;
+  padding: 80px 20px 100px 20px;
+  /* Padding bawah untuk navbar */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Parallax effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.top-content .cintaku {
+  width: 35vh;
+  /* ukuran bisa disesuaikan */
+  max-width: 80%;
+  /* responsive untuk layar kecil */
+  height: auto;
+  margin: 15px auto 30px auto;
+  /* jarak atas/bawah dan tengah secara horizontal */
+  display: block;
+  /* supaya margin auto bekerja */
+  border-radius: 10px;
+  /* opsional, biar cantik */
+  object-fit: cover;
+  /* menjaga proporsi gambar */
+}
+
+.top-content .cintakuu {
+  width: 25vh;
+  /* ukuran bisa disesuaikan */
+  max-width: 80%;
+  /* responsive untuk layar kecil */
+  height: auto;
+  margin: 15px auto 30px auto;
+  /* jarak atas/bawah dan tengah secara horizontal */
+  display: block;
+  /* supaya margin auto bekerja */
+  border-radius: 10px;
+  /* opsional, biar cantik */
+  object-fit: cover;
+  /* menjaga proporsi gambar */
+}
+
+.top-content .cintakuuu {
+  width: 30vh;
+  /* ukuran bisa disesuaikan */
+  max-width: 80%;
+  /* responsive untuk layar kecil */
+  height: auto;
+  margin: 15px auto 30px auto;
+  /* jarak atas/bawah dan tengah secara horizontal */
+  display: block;
+  /* supaya margin auto bekerja */
+  border-radius: 10px;
+  /* opsional, biar cantik */
+  object-fit: cover;
+  /* menjaga proporsi gambar */
+}
+
+.top-content,
+.bottom-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 700px;
+  top: -30px;
+}
+
+.top-content .anim-seq-2 {
+  font-size: 4rem;
+}
+
+/* Groom/Bride Section (Layout Foto Besar) */
+/* Groom/Bride Section */
+/* Groom/Bride Section */
+.section-groom {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* pastikan tinggi layar penuh */
+  overflow: hidden;
+  /* sembunyikan overflow */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: white;
+}
+
+/* Ganti background image dengan <img> agar tidak ter-crop */
+.section-groom {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* full layar */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  /* konten di bawah */
+  justify-content: flex-end;
+  color: white;
+}
+
+/* Background image full layar */
+.section-groom .full-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* memenuhi layar proporsional */
+  z-index: 0;
+}
+
+/* Overlay gelap */
+.section-groom .groom-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* shadow gelap */
+  z-index: 1;
+}
+
+/* Konten groom/bride */
+.groom-content {
+  position: relative;
+  z-index: 2;
+  /* pastikan di atas overlay */
+  max-width: 450px;
+  padding: 50px 30px;
+  text-align: left;
+  margin-left: 50px;
+  /* jarak dari kiri */
+  margin-bottom: 50px;
+  /* jarak dari bawah */
+  right: 100px;
+}
+
+.groom-content .groom-name {
+  padding-top: 20px;
+}
+
+.groom-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--shadow);
+  margin: 10px 0;
+}
+
+/* tanggal */
+
+.top-content,
+.bottom-content h5 {
+  padding: 20px 0;
+}
+
+.top-content,
+.tanggal {
+  padding: 10px 0;
+}
+
+#btnSaveDate {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: var(--nav-bg);
+  border-radius: 20px;
+  color: var(--white);
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+#btnSaveDate:hover {
+  background: var(--shadow);
+}
+
+.btn-ig {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid var(--white);
+  border-radius: 20px;
+  color: var(--white);
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+/* Gallery Section */
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(3px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.lightbox.show {
+  display: flex;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* RSVP Section */
+.rsvp-form .form-control,
+.rsvp-form .form-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.rsvp-form .btn {
+  width: 100%;
+}
+
+.wish-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.page-btn {
+  margin: 5px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 8px;
+}
+
+.page-btn.active {
+  background: #fff;
+  color: #000;
+}
+
+/* === STYLE TAMBAHAN KHUSUS RSVP === */
+
+/* Agar tombol KIRIM terlihat seperti tombol di section lain */
+.rsvp-form button.btn {
+  font-size: 1rem;
+  border-radius: 50px;
+  padding: 8px 35px;
+  background-color: var(--nav-bg);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s;
+  width: 100%;
+  /* Agar tombol full-width seperti yang Anda tentukan */
+}
+
+.rsvp-form button.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Style untuk input yang Read-Only (agar terlihat tidak bisa diketik) */
+#rsvpNameInput[readonly] {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+.wish-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Container guestbook */
+#guestbookList {
+  margin-bottom: 20px;
+}
+
+#guestbook-section {
+  padding-bottom: 50px;
+  /* mencegah pagination ketutup element lain */
+}
+
+/* Wrapper pagination */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  padding-bottom: 20px;
+  /* Menahan supaya tidak tenggelam */
+}
+
+/* Tombol pagination */
+.pagination-wrapper button {
+  border-radius: 6px;
+  padding: 6px 12px;
+  border: 1px solid #0d6efd;
+  background: white;
+  color: #0d6efd;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Tombol aktif */
+.pagination-wrapper button.btn-primary,
+.pagination-wrapper button.active,
+.pagination-wrapper button.active-page {
+  background: #0d6efd !important;
+  color: #fff !important;
+  border-color: #0d6efd !important;
+}
+
+/* Tombol hover */
+.pagination-wrapper button:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+/* gift wedding */
+
+.wedding-gift {
+  padding: 60px 20px;
+  color: white;
+  text-align: left;
+}
+
+.gift-title {
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.gift-desc {
+  max-width: 600px;
+  margin-top: 0;
+  /* ← ini yang hilang */
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.gift-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.btn-gift {
+  padding: 10px 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-gift:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hide {
+  display: none;
+}
+
+.gift-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gift-info h3 {
+  margin: 0 0 0 0;
+  text-align: left;
+}
+
+.gift-info {
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.gift-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 99999;
+  /* WAJIB, agar tombol close bisa diklik */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 100000;
+}
+
+.hide {
+  display: none;
+}
+
+.btn-salin {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* SEMBUNYIKAN GIFT KONTEN AWAL */
+#giftContent {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding-bottom: 70px;
+}
+
+/* MUNCUL HALUS SAAT DIBUKA */
+#giftContent.show {
+  display: block;
+  opacity: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* footer */
+.site-footer {
+  color: #fff;
+  text-align: center;
+  padding-top: 100px;
+  font-family: "Playwrite NO", cursive;
+  letter-spacing: 0.5px;
+}
+
+.site-footer h1 {
+  font-size: 2rem;
+}
+
+.site-footer p {
+  font-size: 15px;
+  top: 50px;
+}
+
+/* ==========================
+   RESPONSIVE LOCK: GROOM / BRIDE
+   ========================== */
+
+/* Pastikan parent jadi anchor (tidak merusak jika sudah relative) */
+.section-groom {
+  position: relative !important;
+}
+
+/* Umum untuk semua device kecil/sedang */
+@media (max-width: 1024px) {
+  .groom-content,
+  .bride-content {
+    /* ganti nama class jika berbeda di HTML-mu */
+    position: absolute !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    text-align: right !important;
+    width: auto !important;
+    z-index: 50 !important;
+    max-width: 420px !important;
+    /* cegah overflow teks */
+    pointer-events: auto;
+  }
+}
+
+/* Lebih kecil (tablet portrait) */
+@media (max-width: 768px) {
+  hero-top {
+    transform: translateY(-20px);
+  }
+
+  .top-content {
+    transform: translateY(-20px);
+  }
+
+  .top-content,
+  .bottom-content h5 {
+    padding: 10px 0;
+  }
+
+  .pembuka-section .bottom-content {
+    top: 0;
+  }
+
+  .groom-content {
+    padding-bottom: 150px;
+  }
+
+  .groom-content,
+  .bride-content {
+    right: 16px !important;
+    bottom: 16px !important;
+    max-width: 340px !important;
+    font-size: 0.95rem !important;
+    /* opsional: sesuaikan agar tidak wrap berlebih */
+  }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+  .groom-content,
+  .bride-content {
+    right: 10px !important;
+    bottom: 10px !important;
+    max-width: 260px !important;
+    font-size: 0.9rem !important;
+    /* opsional */
+    white-space: normal !important;
+    /* biar wrap rapi jika perlu */
+  }
+}
+
+/* alert */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.toast.success {
+  background: #28a745;
+}
+
+.toast.error {
+  background: #dc3545;
+}
+
+.toast.hidden {
+  display: none;
+}
