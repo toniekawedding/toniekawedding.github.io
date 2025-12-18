@@ -4,8 +4,8 @@
 simplyCountdown(".simply-countdown", {
   year: 2025,
   month: 12,
-  day: 14,
-  hours: 0,
+  day: 21,
+  hours: 11,
   minutes: 0,
   seconds: 0,
   words: {
